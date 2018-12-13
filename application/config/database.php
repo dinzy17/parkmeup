@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'parkmeup1.c70ficu2bfdd.us-east-1.rds.amazonaws.com',
 	'username' => 'root',
-	'password' => '',
-	'database' => 'pick_me_up',
+	'password' => 'trail123',
+	'database' => 'parkmeup',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

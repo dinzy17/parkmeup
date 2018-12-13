@@ -23,4 +23,17 @@ class Apimodel extends CI_Model {
       $query=$this->db->query("select * from tbl_property_level where property_id=".$propid);
       return $query->result_array();
     }
+    function cancel($uid)
+    {
+      echo 'aaaa';die;
+    }
+    function book($request)
+    {
+
+      $query=$this->db->query("insert into booking_slot (property_id, udid,  vehicle_type, level, status,created) values ('".$request['data']->prop_id."'
+        ,'".$request['data']->udid."','".$request['data']->vehicle_type."','".$request['data']->level."',1,'".date('Y-m-d H:i:s')."'
+      ) ");
+      return 'inserted';
+      //return $query->result_array();
+    }
 }
