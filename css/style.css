@@ -1,0 +1,22 @@
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+.required { color: red; }
+.form-group {
+	margin-top: 20px !important;
+    display: block !important;
+    clear: both !important;
+    min-height: 35px;
+}
+
+.address-group {
+   min-height: 150px !important;
+	
+}
