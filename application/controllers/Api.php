@@ -20,6 +20,9 @@ class Api extends CI_Controller {
 			case 'book':
 						$this->book($request);
 						break;
+			case 'cancel':
+						$this->cancel($request);
+						break;
 			default:
 							echo 'hi';
 		}
@@ -30,6 +33,12 @@ class Api extends CI_Controller {
 
 				$error=[];
 				try {
+					if($_SERVER['HTTP_HOST']=='localhost')
+					{
+						$url='http://localhost/git/parkmeup/';
+					}else{
+						$url='http://ec2-52-72-13-211.compute-1.amazonaws.com/app/';
+					}
 					$data=$this->apimodel->listData();
 					$temp=array();
 					if(count($data)>0)
@@ -47,7 +56,7 @@ class Api extends CI_Controller {
 							{
 								$temp[$k]['images']=$image;
 							}else{
-								$temp[$k]['images']= array('/images/no-image.jpg');
+								$temp[$k]['images']= array($_SERVER['HTTP_HOST'].'/images/no-image.jpg');
 							}
 							$temp[$k]['level']=$level;
 						}
@@ -58,17 +67,42 @@ class Api extends CI_Controller {
 				}
 				echo json_encode( $data );
 	}
-	public function cancel(){
-		$data=$this->apimodel->cancel();
-	}
-	public function book($request){
-		$data=$this->apimodel->book($request);
-		if($data=='inserted')
+
+	public function cancel($request){
+		$data=$this->apimodel->cancel($request);
+		if($data=='updated')
 		{
-			$data=array('status'=>'success','data'=>'Some error occured. Please try again');
+			$data=array('status'=>'success','message'=>'Booking Cancelled Successfully');
 		}else{
 			$data=array('status'=>'error','data'=>'Some error occured. Please try again');
 		}
 		echo json_encode( $data );
+	}
+
+	public function book($request){
+		$data=$this->apimodel->book($request);
+		if($data['status']=='inserted')
+		{
+			$data=array('status'=>'success','barccode'=>$data['barcodeimage']);
+		}else{
+			$data=array('status'=>'error','data'=>'Some error occured. Please try again');
+		}
+		echo json_encode( $data );
+	}
+	public function barcode()
+	{
+		$this->load->library('phpqrcode/qrlib');
+		$this->load->helper('url');
+		//echo $_SERVER['HTTP_HOST'];die;
+		$SERVERFILEPATH = $_SERVER['DOCUMENT_ROOT'].'/git/parkmeup/images/barcode/';
+			$text = 'aaaa';
+			$text1= substr($text, 0,9);
+
+			$folder = $SERVERFILEPATH;
+			$file_name1 = $text1."-Qrcode" . rand(2,200) . ".png";
+			$file_name = $folder.$file_name1;
+			QRcode::png($text,$file_name);
+
+			echo"<center><img src=".base_url().'images/barcode/'.$file_name1."></center>";die;
 	}
 }
