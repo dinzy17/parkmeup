@@ -46,7 +46,7 @@
  *    ## about process
  *  # features
  *    ## features list
- *  # testimonials
+ *  # testimonialslogo-style
  *  # pricing
  *    ## pricing plan blocks
  *  # download
@@ -107,9 +107,14 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-  color: #00a650;
+  color: #d4d413;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.logo-style{
+  font-size: 26px;
+  color: yellow !important;
+  font-weight: bold
 }
 
 a:hover,
@@ -419,7 +424,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #00a650;
+  background: #d4d413;
   position: absolute;
   left: -16px;
   top: 11px;
@@ -428,7 +433,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: #00a650;
+  color: #d4d413;
 }
 
 dd {
@@ -548,7 +553,7 @@ form,
 }
 
 .pace .pace-progress {
-  background: #00a650;
+  background: #d4d413;
   position: fixed;
   z-index: 900;
   top: 0;
@@ -592,7 +597,7 @@ form,
   margin-left: -30px;
   margin-top: -30px;
   padding: 0;
-  background-color: #00a650;
+  background-color: #d4d413;
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -728,7 +733,7 @@ textarea:focus,
 select:focus {
   color: #000000;
   box-shadow: 0 0 5px rgba(0, 166, 80, 0.8);
-  border: 1px solid #00a650;
+  border: 1px solid #d4d413;
 }
 
 label,
@@ -819,7 +824,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #00a650;
+  -webkit-text-fill-color: #d4d413;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -1161,7 +1166,7 @@ input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-  color: #00a650;
+  color: #d4d413;
 }
 
 .stats-tabs li a em {
@@ -1360,7 +1365,7 @@ input::-moz-focus-inner {
 
 .pgn .current,
 .pgn .current:hover {
-  background-color: #00a650;
+  background-color: #d4d413;
   color: white;
 }
 
@@ -1477,7 +1482,7 @@ input::-moz-focus-inner {
 
 .subhead {
   margin-top: 0;
-  color: #00a650;
+  color: #d4d413;
   font-size: 2.4rem;
   line-height: 1.1667;
   margin-bottom: .8rem;
@@ -1569,7 +1574,7 @@ input::-moz-focus-inner {
 
 .slick-slider .slick-dots li.slick-active button,
 .slick-slider .slick-dots li:hover button {
-  background: #00a650;
+  background: #d4d413;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3003,7 +3008,7 @@ html.no-csstransitions .home-content__main {
 
 .testimonials__name {
   font-weight: 700;
-  color: #00a650;
+  color: #d4d413;
   margin-right: 4px;
 }
 
@@ -3121,7 +3126,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .item-plan--popular .item-plan__block {
-  background-color: #00a650;
+  background-color: #d4d413;
   border: none;
 }
 
@@ -3822,7 +3827,7 @@ a.page-header__search-trigger span {
 
 a.page-header__search-trigger:hover span,
 a.page-header__search-trigger:focus span {
-  color: #00a650;
+  color: #d4d413;
 }
 
 .page-header__search {
@@ -3937,7 +3942,7 @@ a.page-header__search-trigger:focus span {
 
 .page-header__overlay-close:hover::before,
 .page-header__overlay-close:hover::after {
-  background-color: #00a650;
+  background-color: #d4d413;
 }
 
 .page-header__overlay-close::before,
@@ -4204,7 +4209,7 @@ body.search-is-visible {
 
 .entries .more-link:hover,
 .entries .more-link:focus {
-  color: #00a650;
+  color: #d4d413;
 }
 
 .entries-wrap + .pagination-wrap {
@@ -4320,7 +4325,7 @@ body.search-is-visible {
 
 .blog-single-nav a:hover,
 .blog-single-nav a:focus {
-  color: #00a650;
+  color: #d4d413;
 }
 
 .blog-single-nav__prev {
