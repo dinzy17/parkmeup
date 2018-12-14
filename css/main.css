@@ -114,7 +114,71 @@ a {
 .logo-style{
   font-size: 26px;
   color: yellow !important;
-  font-weight: bold
+  font-weight: bold;
+  float: left;
+  display: inline-block;
+  margin-top: -5px;
+}
+.logo-style .logo-p{
+  height: 36px;
+    width: 36PX;
+    float: left;
+    margin-right: 7px;
+}
+.logo-style span{
+  margin-top: -5px;
+  display: inline-block;
+  float: left;
+}
+.faq-cust-sec .faq-wrapper {
+  width:100%;
+}
+.faq-cust-sec .faq-wrapper .mb-2{
+  margin-bottom: -1px;
+}
+.faq-cust-sec .faq-wrapper div {
+  width:100%;
+}
+.faq-cust-sec .faq-wrapper .header {
+  background-color: #fff;
+  padding: 5px 2px 5px 13px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #767934;
+  font-size: 19px;
+}
+.faq-cust-sec .faq-wrapper .header:hover{
+  background-color: #7678341f;
+}
+.faq-cust-sec .faq-wrapper .header .fa-plus{
+  color: #767834;
+  margin-right: 11px;
+  font-size: 15px;
+}
+.faq-cust-sec .faq-wrapper .header.add-remove .fa-plus:before {
+  content: "\f068";
+}
+.faq-cust-sec .faq-wrapper .header.add-remove {
+  background: #767834;
+  color: #fff;
+}
+.faq-cust-sec .faq-wrapper .header.add-remove .fa-plus{
+  color: #fff
+}
+
+.faq-cust-sec .faq-wrapper .content {
+  display: none;
+  padding: 15px 20px 30px 20px;
+  border: 1px solid #767934;
+  border-top: none;
+}
+.faq-cust-sec .faq-wrapper .content ul{
+  margin: 0;
+}
+.faq-cust-sec .faq-wrapper .content ul li{
+  list-style-type: none;
+  line-height: 24px;
+  font-size: 17px
 }
 
 a:hover,
@@ -2162,7 +2226,7 @@ input::-moz-focus-inner {
   text-align: center;
   outline: none;
   position: absolute;
-  bottom: 40%;
+  bottom: 50%;
   left: calc(50% + 200px - 45px);
 }
 

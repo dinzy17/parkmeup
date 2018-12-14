@@ -27,8 +27,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/favicon.ico">
 
 </head>
 
@@ -45,7 +45,8 @@
 
         <div class="header-logo">
             <a class="site-logo logo-style" href="index.html">
-                ParkMeUp
+                <img src="images/logo-p.png" alt="logo" class="logo-p">
+                <span>ParkMeUp</span>
             </a>
         </div>
 
@@ -115,7 +116,7 @@
 
                 </h3>
 
-                <div class="home-content__button" title="Watch this! How we fetch problem of parking " >
+                <div class="home-content__button" title="Watch these problems of parking.">
                     <a class="btn-video" href="https://player.vimeo.com/video/14592941?color=00a650&title=0&byline=0&portrait=0" data-lity>
                         <span class="video-icon"></span>
                     </a>
@@ -281,13 +282,87 @@
 
     <!-- pricing
     ================================================== -->
-    <section id="pricing" class="s-pricing target-section">
+    <section id="pricing" class="s-pricing target-section faq-cust-sec">
 
-        <div class="row section-header narrower align-center" data-aos="fade-up">
+        <div class="row process block-1-4 block-m-1-2 block-tab-full" data-aos="fade-up">
             <div class="col-full">
-                <h1 class="display-1">
-                    FAQ
-                </h1>
+                <h2 class="display-2 display-2 text-center">How The App Works?</h2>
+                <div class="faq-wrapper">
+                    <div class="mb-2">
+                        <div class="header">
+                            <span><i class="fa fa-plus"></i>How does it work?</span>
+
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Upon selecting the destination within the park me up app, a real time display of the parking
+                                    slots available for you to choose from comes up. Click on book now and it gets reserved
+                                    for you. Drive, arrive, scan the barcode received in the app at the entrance and park.
+                                    It’s that simple!</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="header">
+                            <span><i class="fa fa-plus"></i> How are the parking charges calculated?
+                            </span>
+
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>A minimum amount is selected on the basis of the type of vehicle and the location selected.
+                                    Charges are computed depending on the number of hours the parking slot is occupied and
+                                    the entire payment is completed by scanning the barcode scanner at the exit.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="header">
+                            <span><i class="fa fa-plus"></i>Would I get a refund on cancellation of my booking?</span>
+
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>If the cancellation of booking is done half an hour prior to the time slot booked, the entire
+                                    booking amount is refunded to the users. For cancellations done later than that, the
+                                    amount is forfeited.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="header">
+                            <span><i class="fa fa-plus"></i>What if I arrive early or stay late?
+                            </span>
+
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Depending on the number of hours you overstay, parking amount would be computed at the time
+                                    of checkout and payment would need to be processed before exiting. The computation of
+                                    the extra charges would be done on a hourly basis as well.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="header">
+                            <span><i class="fa fa-plus"></i>Download the app now!
+                            </span>
+
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Parking your vehicle has never been easier. Download Park Me Up on your phones and we’ll
+                                    make sure that finding a parking spot is no longer a reason for you to miss the movie
+                                    beginning. A world of smooth, hassle free parking made a reality.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </div>
@@ -307,7 +382,9 @@
                     Download The App Now!
                 </h1>
                 <p>
-                    Parking your vehicle has never been easier. Download Park Me Up on your phones and we’ll make sure that finding a parking spot is no longer a reason for you to miss the movie beginning. A world of smooth, hassle free parking made a reality.
+                    Parking your vehicle has never been easier. Download Park Me Up on your phones and we’ll make sure that finding a parking
+                    spot is no longer a reason for you to miss the movie beginning. A world of smooth, hassle free parking
+                    made a reality.
 
                 </p>
                 <ul class="download-content__badges">
@@ -365,8 +442,8 @@
                 </div>
 
                 <p>
-                    Enhanced parking experience for the customers translates to more business opportunities for you. List your business to make the parking at your facility, a seamless experience.
-                    Contact us at
+                    Enhanced parking experience for the customers translates to more business opportunities for you. List your business to make
+                    the parking at your facility, a seamless experience. Contact us at
 
                 </p>
 
@@ -431,5 +508,16 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(".header").click(function () {
+            $(this).toggleClass('add-remove');
+            $header = $(this);
+            //getting the next element
+            $content = $header.next();
+            //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+            $content.slideToggle(500, function () {
+            });
 
+        });
+    </script>
 </body>
