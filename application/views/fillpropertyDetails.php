@@ -18,14 +18,16 @@
             	<?php
                     } 
             	?>
-            	<form class="form-horizontal" action="<?php echo base_url() ?>property" method="post" enctype="multipart/form-data">
+            	<?php 
+            	$attributes = array('class' => 'property_form', 'id' => 'property_form','name'=>'property_form');
+            	echo form_open('property',$attributes);?>	
                     <fieldset>
                         <legend class="text-center header">Add Location Form</legend>
 
                         <div class="form-group">
                             <span class="col-md-3 text-right">Location Name: <span class="required">*</span></span>
                             <div class="col-md-8">
-                                <input id="pname" value="<?php echo set_value('pname'); ?>" name="pname" type="text" placeholder="Enter Location Name" class="form-control">
+                                <input id="pname" value="<?php echo set_value('pname'); ?>" name="pname" type="text" placeholder="Enter Location Name" class="form-control" maxlength="25" >
                                
                             </div>
                         </div>
@@ -33,7 +35,7 @@
                         <div class="form-group address-group">
                             <span class="col-md-3 text-right">Address: <span class="required">*</span></span>
                             <div class="col-md-8">
-                                <textarea class="form-control" id="address" name="address" placeholder="Enter Address" rows="7"><?php echo set_value('address'); ?></textarea>
+                                <textarea class="form-control" id="address" name="address" maxlength="250" placeholder="Enter Address" rows="7"><?php echo set_value('address'); ?></textarea>
                             </div>
                         </div>
                         
@@ -48,14 +50,14 @@
                         <div class="form-group">
                             <span class="col-md-3 text-right">Two wheeler Charge: <span class="required">*</span></span>
                             <div class="col-md-8">
-                                <input id="two_wheeler_charge" value="<?php echo set_value('two_wheeler_charge'); ?>" name="two_wheeler_charge" type="number" placeholder="Enter Two wheeler Charge" class="form-control">
+                                <input id="two_wheeler_charge" value="<?php echo set_value('two_wheeler_charge'); ?>" name="two_wheeler_charge"  type="number" min="1" max="9999" placeholder="Enter Two wheeler Charge" class="form-control">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <span class="col-md-3 text-right">Four wheeler Charge: <span class="required">*</span></span>
                             <div class="col-md-8">
-                                <input id="four_wheeler_charge" value="<?php echo set_value('four_wheeler_charge'); ?>" name="four_wheeler_charge" type="number" placeholder="Enter Four wheeler Charge" class="form-control" />
+                                <input id="four_wheeler_charge" value="<?php echo set_value('four_wheeler_charge'); ?>" name="four_wheeler_charge" type="number" min="1" max="9999" placeholder="Enter Four wheeler Charge" class="form-control" />
                             </div>
                         </div>
                         
@@ -74,8 +76,8 @@
                                     <tr>  
                                          
                                          <td><input type="text" name="level[]" value="<?php echo set_value('level['.$i.']'); ?>" placeholder="Enter Level name" class="form-control name_list" /></td> 
-                                         <td><input type="number" name="twcapacity[]" value="<?php echo set_value('twcapacity['.$i.']'); ?>" placeholder="Enter Two wheeler capacity" class="form-control name_list" /></td>  
-                                         <td><input type="number" name="fourwcapacity[]" value="<?php echo set_value('fourwcapacity['.$i.']'); ?>" placeholder="Enter Four Wheeler capacity" class="form-control name_list" /></td>   
+                                         <td><input type="number" name="twcapacity[]" min="1" max="9999" value="<?php echo set_value('twcapacity['.$i.']'); ?>" placeholder="Enter Two wheeler capacity" class="form-control name_list" /></td>  
+                                         <td><input type="number" name="fourwcapacity[]" min="1" max="9999" value="<?php echo set_value('fourwcapacity['.$i.']'); ?>" placeholder="Enter Four Wheeler capacity" class="form-control name_list" /></td>   
                                          <?php if($i==0) { ?><td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td> <?php } else { ?>
                                          <td><button type="button" name="remove" id="<?php echo $i; ?>" onclick="$(this).parent().parent().remove();" class="btn btn-danger btn_remove">X</button></td>  <?php } ?>
                                     </tr>
@@ -91,7 +93,7 @@
                         <div class="form-group">
                             <span class="col-md-3 text-right">Minimum Deposit: <span class="required">*</span></span>
                             <div class="col-md-8">
-                                <input id="mindeposit" name="mindeposit" value="<?php echo set_value('mindeposit'); ?>" type="number" placeholder="Enter Minimum Deposit" class="form-control">
+                                <input id="mindeposit" name="mindeposit" value="<?php echo set_value('mindeposit'); ?>" type="number" min="1" max="9999" placeholder="Enter Minimum Deposit" class="form-control">
                             </div>
                         </div>
                         
@@ -99,6 +101,7 @@
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <button type="submit" name="submit" value="submit" class="btn btn-primary btn-lg">Submit</button>
+                                 <button type="button" id="reset" name="reset" onclick="return resetFrm();"value="reset" class="btn btn-default btn-lg">Reset</button>
                             </div>
                         </div>
                     </fieldset>
@@ -112,7 +115,7 @@
       var i=1;  
       $('#add').click(function(){
            i++;  
-           $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="level[]" placeholder="Enter Level number" class="form-control name_list" /></td><td><input type="text" name="twcapacity[]" placeholder="Enter Two wheeler capacity" class="form-control name_list" /></td><td><input type="text" name="fourwcapacity[]" placeholder="Enter Four Wheeler capacity" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+           $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="level[]" placeholder="Enter Level number" class="form-control name_list" /></td><td><input type="number" name="twcapacity[]" min="1" max="9999" placeholder="Enter Two wheeler capacity" class="form-control name_list" /></td><td><input type="number" name="fourwcapacity[]" min="1" max="9999" placeholder="Enter Four Wheeler capacity" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
       });  
       $(document).on('click', '.btn_remove', function(){
     	  var button_id = $(this).attr("id");   
@@ -124,5 +127,11 @@
 	 
 	   
  } 
+ function resetFrm(){
+	 $(".form-control").val("");
+	 $(".form-control-file").val("");
+	 return false;
+	 }
+ 
  </script>
    

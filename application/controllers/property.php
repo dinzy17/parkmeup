@@ -16,27 +16,27 @@ class Property extends CI_Controller {
         $this->form_validation->set_rules('address', 'Property Address', 'required');
         
         $this->form_validation->set_rules('two_wheeler_charge', '2 Wheeler Charge', 
-            'required|greater_than[0]|less_than[10000]',
+            'required|greater_than[0]|less_than[9999]',
             array(
             'required'      => 'The 2 Wheeler Charge field is required.',
             'greater_than'  => 'The 2 Wheeler Charge must be greater than 0.',
-            'less_than'     => 'The 2 Wheeler Charge must be less than 10000.'
+            'less_than'     => 'The 2 Wheeler Charge must be less than 9999.'
             )
         );
         $this->form_validation->set_rules('four_wheeler_charge', '4 Wheeler Charge',
-            'required|greater_than[0]|less_than[10000]',
+            'required|greater_than[0]|less_than[9999]',
             array(
                 'required'      => 'The 4 Wheeler Charge field is required.',
                 'greater_than'  => 'The 4 Wheeler Charge must be greater than 0.',
-                'less_than'     => 'The 4 Wheeler Charge must be less than 10000.'
+                'less_than'     => 'The 4 Wheeler Charge must be less than 9999.'
             )
         );
         $this->form_validation->set_rules('mindeposit', 'Minimum Deposit',
-            'required|greater_than[0]|less_than[10000]',
+            'required|greater_than[0]|less_than[9999]',
             array(
                 'required'      => 'The Minimum Deposit field is required.',
                 'greater_than'  => 'The Minimum Deposit must be greater than 0.',
-                'less_than'     => 'The Minimum Deposit must be less than 10000.'
+                'less_than'     => 'The Maximum Deposit must be less than 9999.'
             )
         );
         
